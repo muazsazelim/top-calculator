@@ -42,7 +42,6 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         const buttonText = button.textContent;
         
-        // Handle digit button clicks
         if (!isNaN(buttonText) || buttonText === ".") {
             updateDisplay(buttonText);
         }
