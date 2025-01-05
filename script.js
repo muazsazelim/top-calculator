@@ -42,6 +42,16 @@ function updateDisplay(value) {
 }
 
 function resetDisplay(value) {
+    value = value.toString();
+
+    if (value.length > 10) {
+        if (parseFloat(value) > 999999999) {
+            value = parseFloat(value).toExponential(5);
+        } else {
+            value = parseFloat(value).toPrecision(10).toString();
+        }
+
+    }
     displayText.textContent = value;
     currentDisplayValue = "0";
     num2 = 0;
