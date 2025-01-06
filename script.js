@@ -51,7 +51,11 @@ function resetDisplay(value) {
             value = parseFloat(value).toPrecision(10).toString();
         }
 
+    } else {
+        // Ensure no trailing zeros for smaller numbers
+        value = parseFloat(value).toString();
     }
+    
     displayText.textContent = value;
     currentDisplayValue = "0";
     num2 = 0;
